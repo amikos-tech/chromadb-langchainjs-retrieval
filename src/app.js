@@ -3,6 +3,8 @@ import { createRetrievalChain } from "langchain/chains/retrieval";
 import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
 import {ChatPromptTemplate} from "@langchain/core/prompts";
 import { Chroma } from "@langchain/community/vectorstores/chroma";
+import {config} from "dotenv";
+config();
 // Create an LLM instance
 const llm = new OpenAI({
     openAIApiKey: process.env.OPENAI_API_KEY,
@@ -20,7 +22,7 @@ const prompt = ChatPromptTemplate.fromTemplate(`Answer the following question ba
 
 // Create a vector store to interact with the vector store
 const vectorStore = new Chroma(embeddings, {
-    url: 'http://localhost:8000',
+    url: 'http://0.0.0.0:8000', //update this as per your requirements
     collectionName: 'my_collection',
 });
 // Create a retriever

@@ -4,7 +4,7 @@
   "description": "Tiny retrieval chain demo for ChromaDB and LangChain",
   "main": "src/app.js",
   "scripts": {
-    "run": "node src/app.js"
+    "app": "node src/app.js"
   },
   "keywords": [],
   "author": "Trayan Azarov <trayan.azarov@amikos.tech>",
@@ -15,6 +15,7 @@
     "@langchain/core": "^0.1.20",
     "@langchain/openai": "^0.0.13",
     "chromadb": "^1.8.1",
+    "dotenv": "^16.4.1",
     "langchain": "^0.1.11"
   }
 }
